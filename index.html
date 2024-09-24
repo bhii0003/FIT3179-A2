@@ -31,40 +31,35 @@
                 {
                     "transform": [
                         {
-                            "lookup": "properties.NAME",
+                            "lookup": "country",
                             "from": {
                                 "data": {
-                                    "url": "Filtered.csv",
+                                    "url": "https://raw.githubusercontent.com/bhii0003/FIT3179-A2/refs/heads/main/Filtered.csv",
+                                    "format": {"type": "csv"}
                                 },
-                                "key": "Country",
-                                "fields": ["AQI Value"]
+                                "key": "country",
+                                "field": ["aqi_value"]
                             }
-                        },
-                        {
-                            "calculate": "datum['AQI Value'] > 0 ? datum['AQI Value'] : null",
-                            "as": "AQI Value"
-                        } 
+                        }
                     ],
                     "mark": {
-                        "type": "circle", "tooltip": {"content": "data"}
+                        "type": "geoshape", "stroke": "white"
                     },
                     "encoding": {
-                        "shape": {"field": "geometry", "type": "geojson"},
                         "color": {
-                        "field": "AQI_value",  // Use your AQI column name
-                        "type": "quantitative",
-                        "title": "Air Quality Index",
-                        "scale": {"scheme": "reds"}
-                        },
-                        "size": {
-                        "field": "AQI_value",  // Use your AQI column name
-                        "type": "quantitative",
-                        "title": "Air Quality Index",
-                        "scale": {"domain": [0, 500]}  // Adjust domain as per AQI range
+                            "field": "aqi_value",
+                            "type": "quantitative",
+                            "scale": {
+                                "scheme": "reds",
+                                "domain": [0, 500]  // Set domain as per AQI range
+                            },
+                            "legend": {
+                                "title": "Air Quality Index"
+                            }
                         },
                         "tooltip": [
                             {"field": "properties.NAME", "type": "nominal", "title": "Country"},
-                            {"field": "AQI Value", "type": "quantitative", "title": "AQI Value", "format": ".0f"}
+                            {"field": "aqi_value", "type": "quantitative", "title": "AQI Value", "format": ".0f"}
                         ]
                     }
                 }
