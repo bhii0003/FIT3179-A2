@@ -1,0 +1,131 @@
+﻿id,country,aqi_value
+ALB,Albania,23
+DZA,Algeria,50
+AND,Andorra,20
+ARG,Argentina,51
+ARM,Armenia,34
+AUS,Australia,46
+AUT,Austria,56
+AZE,Azerbaijan,48
+BHR,Bahrain,137
+BGS,Bangladesh,161
+BLR,Belarus,62
+BEL,Belgium,143
+BLZ,Belize,15
+BMU,Bermuda,17
+BOL,Bolivia,139
+BIH,Bosnia and Herzegovina,46
+BRA,Brazil,196
+BRN,Brunei,11
+BGR,Bulgaria,48
+KHM,Cambodia,42
+CAN,Canada,73
+CPV,Cape Verde,31
+TCD,Chad,21
+CHL,Chile,81
+CHN,China,150
+COL,Colombia,68
+CRI,Costa Rica,42
+HRV,Croatia,61
+CYP,Cyprus,36
+CZE,Czech Republic,79
+DNK,Denmark,24
+DOM,Dominican Republic,25
+ECU,Ecuador,52
+EGY,Egypt,34
+SLV,El Salvador,51
+EST,Estonia,16
+ETH,Ethiopia,25
+FIN,Finland,17
+FRA,France,110
+GUF,French Guiana,30
+GEO,Georgia,42
+DEU,Germany,160
+GHA,Ghana,22
+GIB,Gibraltar,33
+GRC,Greece,60
+GRD,Grenada,46
+GLP,Guadeloupe,25
+GTM,Guatemala,61
+HND,Honduras,33
+HKG,Hong Kong,44
+HUN,Hungary,51
+ISL,Iceland,21
+IND,India,179
+IDN,Indonesia,140
+IRN,Iran,119
+IRQ,Iraq,120
+IRL,Ireland,49
+ISR,Israel,44
+ITA,Italy,58
+CIV,Ivory Coast,17
+JPN,Japan,76
+JOR,Jordan,14
+KAZ,Kazakhstan,47
+KEN,Kenya,103
+UNK,Kosovo,33
+KWT,Kuwait,77
+KGZ,Kyrgyzstan,36
+LAO,Laos,53
+LVA,Latvia,67
+LBR,Liberia,18
+LIE,Liechtenstein,7
+LTU,Lithuania,72
+LUX,Luxembourg,66
+MAC,Macao,50
+MKD,Macedonia,44
+MDG,Madagascar,77
+MYA,Malaysia,63
+MLT,Malta,19
+MTQ,Martinique,41
+MEX,Mexico,91
+MDA,Moldova,11
+MCO,Monaco,6
+MNG,Mongolia,52
+MNE,Montenegro,28
+MMR,Myanmar,46
+NPL,Nepal,62
+NLD,Netherlands,144
+NCL,New Caledonia,30
+NZL,New Zealand,18
+NGA,Nigeria,54
+NOR,Norway,22
+PAK,Pakistan,126
+PSE,Palestinian Territory,57
+PER,Peru,137
+PHL,Philippines,56
+POL,Poland,94
+PRT,Portugal,93
+PRI,Puerto Rico,13
+REU,Reunion,15
+ROU,Romania,56
+RUS,Russia,110
+SMR,San Marino,33
+SEN,Senegal,66
+SRB,Serbia,73
+SGP,Singapore,72
+SVK,Slovakia,37
+SVN,Slovenia,56
+ZAF,South Africa,111
+KOR,South Korea,58
+ESP,Spain,71
+KLA,Sri Lanka,49
+SWE,Sweden,33
+CHE,Switzerland,35
+TWN,Taiwan,51
+TJK,Tajikistan,104
+THA,Thailand,89
+TGO,Togo,8
+TTO,Trinidad and Tobago,34
+TUR,Turkey,69
+TKM,Turkmenistan,85
+UGA,Uganda,86
+UKR,Ukraine,74
+ARE,United Arab Emirates,101
+GBR,United Kingdom of Great Britain and Northern Ireland,127
+USA,United States of America,89
+UZB,Uzbekistan,500
+VAT,Vatican,25
+VEN,Venezuela,47
+VNM,Vietnam,50
+ZMB,Zambia,170
