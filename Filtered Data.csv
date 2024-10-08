@@ -2,6 +2,7 @@ Country,AQI
 Albania,23
 Algeria,50
 Andorra,20
+Angola, 35
 Argentina,51
 Armenia,34
 Australia,46
@@ -26,6 +27,7 @@ Chile,81
 China,150
 Colombia,68
 Costa Rica,42
+Congo, 17
 Croatia,61
 Cyprus,36
 Czech Republic,79
@@ -79,8 +81,10 @@ Macedonia,44
 Madagascar,77
 Malaysia,63
 Malawi, 30
+Mali, 50
 Malta,19
 Martinique,41
+Mauritania, 32
 Mexico,91
 Moldova,11
 Monaco,6
@@ -92,6 +96,7 @@ Nepal,62
 Netherlands,144
 New Caledonia,30
 New Zealand,18
+Niger, 33
 Nigeria,54
 Norway,22
 Pakistan,126
