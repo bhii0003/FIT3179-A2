@@ -22,6 +22,23 @@
             },
             "layer":[
                 {
+                "transform": [
+                    {
+                    "calculate": "'Data is not available in ' + datum.properties.NAME_EN",
+                    "as": "note"
+                    }
+                ],
+                "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"},
+                "encoding": {"tooltip": {"field": "note"}}
+                },
+                {
+                "data": {
+                    "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/7_others/oceans.topojson",
+                    "format": {"type": "topojson", "feature": "oceans"}
+                },
+                "mark": {"type": "geoshape", "fill": "skyblue"}
+                },
+                {
                     "data": {
                         "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
                         "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
@@ -29,9 +46,18 @@
                     "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
                 },
                 {
+                "data": {
+                    "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/2_symbol_map/js/WorldMapWithGraticules.topojson",
+                    "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
+                },
+                "mark": {"type": "geoshape", "fill": null, "stroke": "lightgray"}
+                },
+
+                // Display and clean data
+                {
                     "transform": [
                         {
-                            "lookup": "country",
+                            "lookup": "properties.NAME_EN",
                             "from": {
                                 "data": {
                                     "url": "https://raw.githubusercontent.com/bhii0003/FIT3179-A2/refs/heads/main/Filtered.csv",
@@ -40,6 +66,10 @@
                                 "key": "country",
                                 "field": ["aqi_value"]
                             }
+                        },
+                        {
+                            "calculate": "datum.aqi_value + 1",
+                            "as": "AQI Value: "
                         }
                     ],
                     "mark": {
@@ -51,22 +81,51 @@
                             "type": "quantitative",
                             "scale": {
                                 "scheme": "reds",
-                                "domain": [0, 500]  // Set domain as per AQI range
+                                "domain": [0, 600]  // Set domain as per AQI range
                             },
                             "legend": {
                                 "title": "Air Quality Index"
                             }
                         },
                         "tooltip": [
-                            {"field": "properties.NAME", "type": "nominal", "title": "Country"},
-                            {"field": "aqi_value", "type": "quantitative", "title": "AQI Value", "format": ".0f"}
+                            {"fields": "properties.NAME_EN", "type": "nominal", "title": "Country"},
+                            {"fields": "aqi_value", "type": "quantitative", "title": "AQI Value", "format": ".0f"}
                         ]
                     }
+                },
+
+                // Display country name on the map
+                {
+                "transform": [
+                    {
+                    "lookup": "properties.NAME",
+                    "from": {
+                            "data": {
+                            "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/data/countryInfo.csv"
+                            },
+                            "key": "name",
+                            "fields": ["latitude", "longitude"]
+                        }
+                    }
+                ],
+                "mark": {"type": "text"},
+                "encoding": {
+                        "longitude": {"field": "longitude", "type": "quantitative"},
+                        "latitude": {"field": "latitude", "type": "quantitative"},
+                        "text": {"field": "properties.NAME", "type": "nominal"},
+                        "opacity": {
+                        "condition": {
+                                "test": "datum['properties.NAME'] == 'China' || datum['properties.NAME'] == 'Brazil' || datum['properties.NAME'] == 'Australia' || datum['properties.NAME'] == 'Malaysia' ||  datum['properties.NAME'] == 'Yemen' ||  datum['properties.NAME'] == 'United States of America'",
+                                "value": 1
+                            },
+                            "value": 0
+                        }
+                    }
                 }
-            ]
-            
+            ],
+            "config": {}
         };
-        vegaEmbed('#vis', spec);
-    </script>
+    vegaEmbed("#vis", spec, {mode: "vega-lite"}).then(console.log).catch(console.warn);
+  </script>
 </body>
 </html>
