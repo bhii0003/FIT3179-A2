@@ -4,8 +4,7 @@
     "url": "https://raw.githubusercontent.com/bhii0003/FIT3179-A2/refs/heads/main/top10.csv"
   },
   "title": "Top 10 Most Air Polluted Countries",
-  "width": 500,
-  "height": 300,
+  "width": "container",
   "mark": "bar",
   "encoding": {
     "y": {
@@ -33,6 +32,5 @@
       }
     ]
   },
-
   "config": {}
 }
