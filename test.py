@@ -11,7 +11,7 @@ columns_to_keep = ['Entity', 'Year', 'Carbon monoxide (CO) emissions (%)', 'Nitr
 df_filtered = df[columns_to_keep]
 
 # Rename pollutant columns by removing 'emissions' and '%' symbol
-df_filtered.columns = ['Country', 'Year', 'CO', 'NO', 'SO₂', 'NMVOC', 'OC', 'BC', 'NH₃']
+df_filtered.columns = ['Country', 'Year', 'Carbon monoxide (CO)', 'Nitrogen oxide (NOx)', 'Sulphur dioxide (SO₂)', 'Non-methane volatile organic compounds (NMVOC)', 'Organic carbon (OC)', 'Black carbon (BC)','Ammonia (NH₃)']
 
 # Save the updated DataFrame to a new CSV file
 output_file = 'pollutants_percentage.csv'
