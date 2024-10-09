@@ -1,4 +1,5 @@
 Country,AQI
+Afghanistan,104
 Albania,23
 Algeria,50
 Antarctica, 35
@@ -25,6 +26,7 @@ Cambodia,42
 Cameroon, 19
 Canada,73
 Cape Verde,31
+Central African Rep.,70
 Chad,21
 Chile,81
 China,150
@@ -45,6 +47,7 @@ Ethiopia,25
 Finland,17
 France,110
 French Guiana,30
+Gabon,40
 Georgia,42
 Germany,160
 Ghana,22
@@ -126,6 +129,7 @@ Slovenia,56
 Somalia, 20
 South Africa,111
 South Korea,58
+South Sudan,135
 Spain,71
 Sri Lanka,49
 Sudan, 149
@@ -144,6 +148,7 @@ Ukraine,74
 United Arab Emirates,101
 United Kingdom of Great Britain and Northern Ireland,127
 United States of America,89
+Uzbekistan,101
 Vatican,25
 Venezuela,47
 Vietnam,50
