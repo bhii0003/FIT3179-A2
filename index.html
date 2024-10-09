@@ -51,7 +51,7 @@
       <div class="pure-u-1-3">
         <div id="vis4" class="vis-container"></div>
       </div>
-      <div class="pure-u-1-3" style="width: 31.5%;">
+      <div class="pure-u-1-3">
         <div id="vis3" class="vis-container" style="margin-left: 15px;"></div>
       </div>
 
@@ -85,9 +85,12 @@
     <script type="text/javascript">
       var specVis1 = "./big-map.json";
       var specVis2 = "./top-10.json";
+      var specVis3 = "./pollutants.json"
 
       vegaEmbed("#vis1", specVis1, {mode: "vega-lite"}).then(console.log).catch(console.warn);
       vegaEmbed("#vis2", specVis2, {mode: "vega-lite"}).then(console.log).catch(console.warn);
+      vegaEmbed("#vis3", specVis3, {mode: "vega-lite"}).then(console.log).catch(console.warn);
+
     </script>
 </body>
 </html>
