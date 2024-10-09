@@ -1,0 +1,38 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/bhii0003/FIT3179-A2/refs/heads/main/top10.csv"
+  },
+  "title": "Top 10 Most Air Polluted Countries",
+  "width": 500,
+  "height": 300,
+  "mark": "bar",
+  "encoding": {
+    "y": {
+      "field": "Country",
+      "type": "nominal",
+      "sort": "-x",
+      "axis": { "title": "Countries" }
+    },
+    "x": {
+      "field": "Concentration",
+      "type": "quantitative",
+      "axis": { "title": "Concentration(μg/m³)" }
+    },
+    "color": {
+      "field": "Concentration",
+      "type": "quantitative",
+      "legend": null
+    },
+    "tooltip": [
+      { "field": "Country", "type": "nominal" },
+      {
+        "field": "Concentration",
+        "type": "quantitative",
+        "title": "PM2.5 Concentration"
+      }
+    ]
+  },
+
+  "config": {}
+}
