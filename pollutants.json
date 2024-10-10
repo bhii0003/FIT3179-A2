@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Change in emissions of air pollutants, World, 1970 to 2022",
+    "title": "Change in emissions of air pollutants 1970 to 2022",
     "width": "container",
     "height": 400,
     "data": {
