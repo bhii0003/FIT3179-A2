@@ -4,8 +4,8 @@
       "url": "https://raw.githubusercontent.com/bhii0003/FIT3179-A2/refs/heads/main/death-by-age.csv"
     },
     "title": "Outdoor air pollution death rate by age, World, 2021",
-    "width": "container",
-    "height": 480,
+    "width": 450,
+    "height": 350,
     "mark": "bar",
     "encoding": {
       "y": {
@@ -17,7 +17,6 @@
       "x": {
         "field": "Age",
         "type": "nominal",
-        "sort": "",
         "axis": { "title": "Age Group" }
       },
       "color": {
