@@ -1,0 +1,39 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/bhii0003/FIT3179-A2/refs/heads/main/death-by-age.csv"
+    },
+    "title": "Outdoor air pollution death rate by age, World, 2021",
+    "width": "container",
+    "height": 480,
+    "mark": "bar",
+    "encoding": {
+      "y": {
+        "field": "Deaths",
+        "type": "quantitative",
+        
+        "axis": { "title": "Deaths(per 100,000)" }
+      },
+      "x": {
+        "field": "Age",
+        "type": "nominal",
+        "sort": "",
+        "axis": { "title": "Age Group" }
+      },
+      "color": {
+        "field": "Deaths",
+        "type": "quantitative",
+        "legend": null
+      },
+      "tooltip": [
+        { "field": "Age", "type": "nominal" },
+        {
+          "field": "Deaths",
+          "type": "quantitative",
+          "title": "Deaths(per 100,000)"
+        }
+      ]
+    },
+    "config": {}
+  }
+  
