@@ -1,8 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": "Change in emissions of air pollutants 1970 to 2022",
-    "width": "container",
-    "height": 400,
+    "width": 500,
+    "height": 500,
     "data": {
       "url": "https://raw.githubusercontent.com/bhii0003/FIT3179-A2/refs/heads/main/pollutants_percentage.csv"
     },
@@ -72,7 +72,7 @@
           "color": {
             "field": "Pollutant",
             "type": "nominal",
-            "legend": {"title": "Pollutant"}
+            "legend": {"title": "Pollutant","orient": "none", "legendX":10, "legendY":5}
           },
           "tooltip": [
             {"field": "Year", "type": "ordinal", "title": "Year"},
