@@ -1,8 +1,11 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Deaths per 100,000 by Country (1990-2017)",
-  "width": 500,
-  "height": 280,
+  "title": {
+    "text": "Deaths per 100,000 by Country (1990-2017)",
+    "font": "Helvetica Neue"
+  },
+  "width": "container",
+  "height": 235,
   "data": {
     "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
     "format": { "type": "topojson", "feature": "ne_110m_admin_0_countries" }
@@ -45,9 +48,6 @@
             "key": "Country",
             "fields": ["Deaths", "Year"]
           }
-        },
-        {
-          "filter": "datum.Year == yearSelection"
         }
       ],
       "mark": { "type": "geoshape", "stroke": "white" },
@@ -71,18 +71,14 @@
       }
     }
   ],
-  "params": [
-    {
-      "name": "yearSelection",
-      "value": 1990,
-      "bind": {
-        "input": "range",
-        "min": 1990,
-        "max": 2017,
-        "step": 1,
-        "name": "Year: "
-      }
+  "config": {
+    "axis": {
+      "titleFont": "",
+      "labelFont": "serif"     
+    },
+    "legend": {
+      "titleFont": "serif",   
+      "labelFont": "serif"    
     }
-  ],
-  "config": {}
+  }
 }

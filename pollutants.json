@@ -1,99 +1,94 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Change in emissions of air pollutants 1970 to 2022",
-    "width": 500,
-    "height": 450,
-    "data": {
-      "url": "https://raw.githubusercontent.com/bhii0003/FIT3179-A2/refs/heads/main/pollutants_percentage.csv"
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Change in emissions of air pollutants 1970 to 2022",
+  "width": 350,
+  "height": 200,
+  "data": {
+    "url": "https://raw.githubusercontent.com/bhii0003/FIT3179-A2/refs/heads/main/pollutants_percentage.csv"
+  },
+  "transform": [
+    {
+      "fold": [
+        "Carbon monoxide (CO)",
+        "Nitrogen oxide (NOx)",
+        "Sulphur dioxide (SO₂)",
+        "Non-methane volatile organic compounds (NMVOC)",
+        "Organic carbon (OC)",
+        "Black carbon (BC)",
+        "Ammonia (NH₃)"
+      ],
+      "as": ["Pollutant", "Percentage Change"]
     },
-    "transform": [
-      {
-        "fold": [
-          "Carbon monoxide (CO)",
-          "Nitrogen oxide (NOx)",
-          "Sulphur dioxide (SO₂)",
-          "Non-methane volatile organic compounds (NMVOC))",
-          "Organic carbon (OC)",
-          "Black carbon (BC)",
-          "Ammonia (NH₃)"
-        ],
-        "as": ["Pollutant", "Percentage Change"]
-      },
-      {
-        "calculate": "year(datum.Year)",
-        "as": "Year"
-      },
-      {
-        "filter": "datum.Year <= year_slider"
-      }
-    ],
-    "layer":[
-      {
-        "mark": {
-        "type": "line",
-        "interpolate": "monotone"
+    {"calculate": "year(datum.Year)", "as": "Year"},
+    {"filter": "datum.Year <= year_slider"}
+  ],
+  "layer": [
+    {
+      "mark": {"type": "line", "interpolate": "monotone"},
+      "encoding": {
+        "x": {"field": "Year", "type": "ordinal", "axis": {"title": "Year"}},
+        "y": {
+          "field": "Percentage Change",
+          "type": "quantitative",
+          "axis": {"title": "Percentage Change (%)"},
+          "scale": {"domain": [-60, 100]}
         },
-        "encoding": {
-          "x": {
-            "field": "Year",
-            "type": "ordinal",
-            "axis": {"title": "Year"}
-          },
-          "y": {
-            "field": "Percentage Change",
-            "type": "quantitative",
-            "axis": {"title": "Percentage Change (%)"},
-            "scale": {"domain": [-60, 100]}
-          },
-          "color": {
-            "field": "Pollutant",
-            "type": "nominal",
-            "legend": {"title": "Pollutant"}
+        "color": {
+          "field": "Pollutant",
+          "type": "nominal",
+          "legend": {"title": "Pollutant"},
+          "scale": {
+            "domain": ["Carbon monoxide (CO)",
+              "Nitrogen oxide (NOx)",
+              "Sulphur dioxide (SO₂)",
+              "Non-methane volatile organic compounds (NMVOC)",
+              "Organic carbon (OC)",
+              "Black carbon (BC)",
+              "Ammonia (NH₃)"],
+            "range":["#808080", "#FFA500", "#000000", "#FF0000", "#0000FF", "#FFFF00", "#800080"  ]  
           }
         }
-      },
-      {
-        "mark": {
-        "type": "point",
-        "interpolate": "monotone"
+      }
+    },
+    {
+      "mark": {"type": "point", "interpolate": "monotone"},
+      "encoding": {
+        "x": {"field": "Year", "type": "ordinal", "axis": {"title": "Year"}},
+        "y": {
+          "field": "Percentage Change",
+          "type": "quantitative",
+          "axis": {"title": "Percentage Change (%)"},
+          "scale": {"domain": [-60, 100]}
         },
-        "encoding": {
-          "x": {
-            "field": "Year",
-            "type": "ordinal",
-            "axis": {"title": "Year"}
-          },
-          "y": {
+        "color": {
+          "field": "Pollutant",
+          "type": "nominal",
+          "legend": {"title": "Pollutant"}
+        },
+        "tooltip": [
+          {"field": "Year", "type": "ordinal", "title": "Year"},
+          {"field": "Pollutant", "type": "nominal", "title": "Pollutant"},
+          {
             "field": "Percentage Change",
             "type": "quantitative",
-            "axis": {"title": "Percentage Change (%)"},
-            "scale": {"domain": [-60, 100]}
-          },
-          "color": {
-            "field": "Pollutant",
-            "type": "nominal",
-            "legend": {"title": "Pollutant","orient": "none", "legendX":10, "legendY":5}
-          },
-          "tooltip": [
-            {"field": "Year", "type": "ordinal", "title": "Year"},
-            {"field": "Pollutant", "type": "nominal", "title": "Pollutant"},
-            {"field": "Percentage Change", "type": "quantitative", "format": "0.2f","title": "Percentage Change (%)"}]
-        }
+            "format": "0.2f",
+            "title": "Percentage Change (%)"
+          }
+        ]
       }
-    ],
-    "params": [
-      {
-        "name": "year_slider",
-        
-        "value": 2022,
-        "bind": {
-          "input": "range",
-          "min": 1970,
-          "max": 2022,
-          "step": 1,
-          "name": "Select Year"
-        }
+    }
+  ],
+  "params": [
+    {
+      "name": "year_slider",
+      "value": 2022,
+      "bind": {
+        "input": "range",
+        "min": 1970,
+        "max": 2022,
+        "step": 1,
+        "name": "Year: "
       }
-    ]
-  }
-  
+    }
+  ]
+}

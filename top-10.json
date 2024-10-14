@@ -5,7 +5,7 @@
   },
   "title": "Top 10 Most Air Polluted Countries",
   "width": "container",
-  "height": 365,
+  "height": 215,
   "mark": "bar",
   "encoding": {
     "y": {

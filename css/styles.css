@@ -4,6 +4,12 @@ body *{
 
 h1 {
     font-weight: 900;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h2 {
+    font-weight: 900;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 body {
