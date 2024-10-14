@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Deaths per 100,000 by Country (1990-2017)",
+    "text": "Deaths per 100,000 by Country in 2017",
     "font": "Helvetica Neue"
   },
   "width": "container",
